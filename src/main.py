@@ -1,12 +1,13 @@
-from loader import welcome, load_settings
+from loader import load_settings
 from declaration.acoes import Acoes
+from declaration.fiis import Fiis
 
 class Application:
     def start(self):
-        welcome()
         self.__settings = load_settings()
         self.__builders = {
-            "acoes": Acoes(self.__settings.produtos[31])
+            "acoes": Acoes(self.__settings.produtos[31]),
+            "fiis": Fiis(self.__settings.produtos[73])
         }
 
     def generate(self):
