@@ -5,7 +5,8 @@ class Acoes:
     def generate(self):
         result = [
             "\n==============================",
-            "\n31 - DECLARAÇÃO DE BENS E DIREITOS",
+            "\nDECLARAÇÃO DE BENS E DIREITOS",
+            "\nCódigo: 31",
             "\n==============================",
         ]
         for item in self.__data["elementos"]:
