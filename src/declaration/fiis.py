@@ -12,14 +12,15 @@ class Fiis:
             "\n==============================",
             "\n==============================",
             "\nDECLARAÇÃO DE BENS E DIREITOS",
-            "\nCódigo: 73\n",
+            "\nCódigo: 73 - Posição FIIs\n",
         ]
         for item in self.__data["elementos"]:
-            custo_medio_formatado = f'{item["precoMedio"]}'.replace('.', ',')
-            custo_total = item["precoMedio"]*item["quantidade"]
-            custo_total_formatado = f'{"{:.2f}".format(custo_total)}'.replace('.', ',')
-            content = f'\n{item["quantidade"]} COTAS DE {item["nome"]} CÓDIGO DE NEGOCIAÇÃO B3 "{item["ticker"]}".\nCNPJ {item["cnpj"]}.\nCUSTO TOTAL DE R$ {custo_total_formatado}.\nCUSTO MÉDIO DE R$ {custo_medio_formatado}.\n'
-            result.append(content.upper())
+            if item["quantidade"] > 0 :
+                custo_medio_formatado = f'{item["precoMedio"]}'.replace('.', ',')
+                custo_total = item["precoMedio"]*item["quantidade"]
+                custo_total_formatado = f'{"{:.2f}".format(custo_total)}'.replace('.', ',')
+                content = f'\n{item["quantidade"]} COTAS DE {item["nome"]} CÓDIGO DE NEGOCIAÇÃO B3 "{item["ticker"]}".\nCNPJ {item["cnpj"]}.\nCUSTO TOTAL DE R$ {custo_total_formatado}.\nCUSTO MÉDIO DE R$ {custo_medio_formatado}.\n'
+                result.append(content.upper())
         return result
 
     def descreverRendimentos(self):
@@ -27,7 +28,7 @@ class Fiis:
             "\n==============================",
             "\n==============================",
             "\nRENDIMENTOS ISENTOS E NÃO TRIBUTÁVEIS",
-            "\nCódigo: 26\n",
+            "\nCódigo: 26 - Rendimentos dos FIIs\n",
         ]
         for item in self.__data["elementos"]:
             rendimentos_formatado = f'{"{:.2f}".format(item["rendimentos"])}'.replace('.', ',')
