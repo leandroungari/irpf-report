@@ -12,7 +12,7 @@ class Fiis:
             "\n==============================",
             "\n==============================",
             "\nDECLARAÇÃO DE BENS E DIREITOS",
-            "\nCódigo: 73\n",
+            "\nCódigo: 73 - Posição FIIs\n",
         ]
         for item in self.__data["elementos"]:
             if item["quantidade"] > 0 :
@@ -28,7 +28,7 @@ class Fiis:
             "\n==============================",
             "\n==============================",
             "\nRENDIMENTOS ISENTOS E NÃO TRIBUTÁVEIS",
-            "\nCódigo: 26\n",
+            "\nCódigo: 26 - Rendimentos dos FIIs\n",
         ]
         for item in self.__data["elementos"]:
             rendimentos_formatado = f'{"{:.2f}".format(item["rendimentos"])}'.replace('.', ',')
